@@ -1,12 +1,18 @@
 #include<iostream>
 #include<pthread.h>
+#include<atomic>
 
 #define THREAD_MAX 5
 
 using namespace std;
 
+atomic_flag print_lock = ATOMIC_FLAG_INIT;
+
 void *print_random(void *tid) {
+	while (print_lock.test_and_set(memory_order_acquire))
+		;
 	cout << "This is from thread #" << (long) tid << endl;
+	print_lock.clear(memory_order_acquire);
 	pthread_exit(NULL);
 }
 

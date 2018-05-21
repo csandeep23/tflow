@@ -1,5 +1,8 @@
+CC = g++
+CFLAGS = -std=c++11 -pthread
+
 all:
-	@g++ -pthread -o run main.cpp
+	@$(CC) $(CFLAGS) -o run main.cpp
 
 clean:
 	@rm -rf run
