@@ -1,5 +1,5 @@
 all:
-	g++ main.cpp -o run
+	@g++ -pthread -o run main.cpp
 
 clean:
-	rm -rf run
+	@rm -rf run
