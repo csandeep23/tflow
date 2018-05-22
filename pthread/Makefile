@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -std=c++11 -pthread
 
 all: main.o pth.o
-	@$(CC) $(CFLAGS) -o run main.o
+	@$(CC) $(CFLAGS) -o run main.o pth.o
 
 main.o: main.cpp pth.h
 	@$(CC) $(CFLAGS) -c main.cpp
