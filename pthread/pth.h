@@ -3,7 +3,7 @@
 
 class pth {
 public:
-	void *print_threadindex(void *tid);
+	int *print_threadindex(void *tid);
 	int create_threads(int cnt);
 };
 
